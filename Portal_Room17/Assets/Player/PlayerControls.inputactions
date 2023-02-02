@@ -33,10 +33,19 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Drag&Drop",
+                    "name": "Pick",
                     "type": "Button",
                     "id": "236dcfd7-59b7-4cbb-a7f7-b9559ccb526a",
                     "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Look",
+                    "type": "PassThrough",
+                    "id": "36a98914-61f6-4425-8034-40678a6487f3",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -127,7 +136,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Drag&Drop",
+                    "action": "Pick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f77470da-eb95-42eb-af3b-67665388706c",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
