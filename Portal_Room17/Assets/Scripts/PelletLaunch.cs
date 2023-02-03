@@ -11,7 +11,6 @@ public class PelletLaunch : MonoBehaviour
 
     // Variables de délai de spawn des EnergyPellet:
     int maxPelletNumber = 10;
-    //int currentPelletNumber = 0;
     [SerializeField] private float instantiationDelay = 7.0f;
 
 
@@ -32,9 +31,12 @@ public class PelletLaunch : MonoBehaviour
         int i = 0;
         while (i < maxPelletNumber)
         {
+            // Instantiation des balles du Portal Gun:
             var energyPellet = Instantiate(energyPelletPrefab, energyPelletSpawnPoint.position, energyPelletSpawnPoint.rotation);
             energyPellet.GetComponent<Rigidbody>().velocity = energyPelletSpawnPoint.forward * energyPelletSpeed;
             i++;
+
+            // Une coroutine nécessite un yield, auquel on applique un délai:
             yield return new WaitForSeconds(instantiationDelay);
         }
     }

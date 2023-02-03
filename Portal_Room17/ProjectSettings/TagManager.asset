@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Activation1
   - PelletCatcher
+  - Pickable
   layers:
   - Default
   - TransparentFX

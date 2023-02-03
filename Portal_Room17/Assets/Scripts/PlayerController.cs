@@ -27,13 +27,6 @@ public class PlayerController : MonoBehaviour
     public Transform bulletSpawnPoint;
     public GameObject bulletPrefab;
 
-    // Variables pour le pick du Companion Cube :
-    [SerializeField][Range(1, 20)] private float pickupRange;
-    public LayerMask pickableLayerMask;
-    public Transform playerCameraTransform;
-    public GameObject pickupUI;
-    private RaycastHit hit;
-
 
     private void Awake()
     {
@@ -51,7 +44,6 @@ public class PlayerController : MonoBehaviour
         OnMove();
         OnJump();
         OnFire();
-        OnPick();
     }
 
     private void OnMove()
@@ -98,26 +90,6 @@ public class PlayerController : MonoBehaviour
             bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * bulletSpeed;             
         }
     }
-
-    private void OnPick()
-    {
-        Debug.DrawRay(playerCameraTransform.position, playerCameraTransform.forward * pickupRange, Color.red);
-        if (hit.collider != null)
-        {
-            pickupUI.SetActive(false);
-        }
-
-        // On vérifie si la collision se fait grâce à plusieurs paramètres du Raycast :
-        if (Physics.Raycast(
-            playerCameraTransform.position,             // Position de lancement du raycast
-            playerCameraTransform.forward,              // Direction du raycast
-            out hit, pickupRange,                       // Sortie du hit du raycast + portée maximum
-            pickableLayerMask))                         // On rajoute le layer pour ne pouvoir hit que les objets avec le layer 'Pickable'
-        {
-            pickupUI.SetActive(true);
-        }
-    }
-
 
     // Pour éviter les pertes de mémoires il faut activer et désactiver l'écoute des inputs que lorsqu'on en a besoin : 
     private void OnEnable()
