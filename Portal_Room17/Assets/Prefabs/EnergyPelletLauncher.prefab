@@ -7469,7 +7469,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8533826091436262387}
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -6.82, y: 2.51, z: 9.44}
+  m_LocalPosition: {x: -6.82, y: 2.51, z: 8.67}
   m_LocalScale: {x: 15, y: 5, z: 15}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7554,3 +7554,4 @@ MonoBehaviour:
   energyPelletSpeed: 10
   energyPelletPrefab: {fileID: 1186143922048135836, guid: f370d420c079941e89d5a32846cb2f7d, type: 3}
   energyPelletSpawnPoint: {fileID: 6235072906902095961}
+  instantiationDelay: 7
