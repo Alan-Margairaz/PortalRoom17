@@ -13,12 +13,12 @@ public class PickUp : MonoBehaviour
     public Transform playerCameraTransform;
     private RaycastHit hit;
 
-    // Variables pour le pick du Companion Cube :
+    // Variables pour le pick & drop du Companion Cube :
     private PlayerControls playerControls;
     private GameObject cubeInHand;
     public Transform pickUpTransform;
     private Rigidbody rb;
-    private float pickUpForce = 100.0f;
+    //private float pickUpForce = 100.0f;
 
 
     private void Awake()
@@ -48,6 +48,7 @@ public class PickUp : MonoBehaviour
             // On prend le cube lorsque l'on appuie sur 'E':
             if (playerControls.Player.Pick.triggered && rb != null)
             {
+
                 // On parente le cube à un transform préalablement placé devant le joueur pour récupérer son transform:
                 cubeInHand = hit.collider.gameObject;
                 cubeInHand.transform.SetParent(pickUpTransform.transform, true);
@@ -58,18 +59,18 @@ public class PickUp : MonoBehaviour
                 rb.angularDrag = 1f;
                 rb.constraints = RigidbodyConstraints.FreezeRotation;
             }
-            else if (Vector3.Distance(cubeInHand.transform.position, pickUpTransform.position) > 0.2f)      // PROBLÈME À RÉGLER ICI, NE S'INITIALISE PAS (NULL REFERENCE)
-            {
-                Vector3 moveDirection = (pickUpTransform.position - cubeInHand.transform.position);
-                rb.AddForce(moveDirection * pickUpForce);
-            }
+            //else if (Vector3.Distance(cubeInHand.transform.position, pickUpTransform.position) > 0.2f)      // PROBLÈME À RÉGLER ICI, NE S'INITIALISE PAS (NULL REFERENCE) MAIS PERMET UN DROPPING PLUS PROCHE DU JEU
+            //{
+            //    Vector3 moveDirection = (pickUpTransform.position - cubeInHand.transform.position);
+            //    rb.AddForce(moveDirection * pickUpForce);
+            //}
         }
     }
 
     private void OnDrop()
     {
         // On enlève le transform du parent appliqué au cube pour le faire tomber & reset du rb à son état normal
-        if (playerControls.Player.Drop.triggered)
+        if (playerControls.Player.Drop.triggered & rb != null)
         {
             rb.useGravity = true;
             rb.drag = 1;
