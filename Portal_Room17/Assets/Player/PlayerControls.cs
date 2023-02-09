@@ -55,7 +55,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Pick"",
+                    ""name"": ""Interact"",
                     ""type"": ""Button"",
                     ""id"": ""236dcfd7-59b7-4cbb-a7f7-b9559ccb526a"",
                     ""expectedControlType"": ""Button"",
@@ -167,7 +167,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Pick"",
+                    ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -231,7 +231,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
-        m_Player_Pick = m_Player.FindAction("Pick", throwIfNotFound: true);
+        m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_Drop = m_Player.FindAction("Drop", throwIfNotFound: true);
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
         // UI
@@ -299,7 +299,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Fire;
-    private readonly InputAction m_Player_Pick;
+    private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_Drop;
     private readonly InputAction m_Player_Look;
     public struct PlayerActions
@@ -309,7 +309,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Fire => m_Wrapper.m_Player_Fire;
-        public InputAction @Pick => m_Wrapper.m_Player_Pick;
+        public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @Drop => m_Wrapper.m_Player_Drop;
         public InputAction @Look => m_Wrapper.m_Player_Look;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
@@ -330,9 +330,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Fire.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
                 @Fire.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
                 @Fire.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
-                @Pick.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPick;
-                @Pick.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPick;
-                @Pick.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPick;
+                @Interact.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
+                @Interact.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
+                @Interact.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
                 @Drop.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDrop;
                 @Drop.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDrop;
                 @Drop.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDrop;
@@ -352,9 +352,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Fire.started += instance.OnFire;
                 @Fire.performed += instance.OnFire;
                 @Fire.canceled += instance.OnFire;
-                @Pick.started += instance.OnPick;
-                @Pick.performed += instance.OnPick;
-                @Pick.canceled += instance.OnPick;
+                @Interact.started += instance.OnInteract;
+                @Interact.performed += instance.OnInteract;
+                @Interact.canceled += instance.OnInteract;
                 @Drop.started += instance.OnDrop;
                 @Drop.performed += instance.OnDrop;
                 @Drop.canceled += instance.OnDrop;
@@ -403,7 +403,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
-        void OnPick(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
         void OnDrop(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
     }

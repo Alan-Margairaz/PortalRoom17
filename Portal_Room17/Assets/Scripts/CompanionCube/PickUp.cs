@@ -20,17 +20,22 @@ public class PickUp : MonoBehaviour
     private Rigidbody rb;
     //private float pickUpForce = 100.0f;
 
+    // Variables pour les intéractions:
+    public LayerMask interactLayerMask;
+    private OpenIncinerator openIncinerator;
+
 
     private void Awake()
     {
         playerControls = new PlayerControls();
+        openIncinerator = GameObject.FindGameObjectWithTag("Destroyable").GetComponent<OpenIncinerator>();
     }
 
     void Update()
     {
         OnPick();
         OnDrop();
-        //CubeMove();
+        OnInteract();
     }
 
     private void OnPick()
@@ -46,9 +51,8 @@ public class PickUp : MonoBehaviour
             rb = hit.collider.GetComponent<Rigidbody>();            
 
             // On prend le cube lorsque l'on appuie sur 'E':
-            if (playerControls.Player.Pick.triggered && rb != null)
+            if (playerControls.Player.Interact.triggered && rb != null)
             {
-
                 // On parente le cube à un transform préalablement placé devant le joueur pour récupérer son transform:
                 cubeInHand = hit.collider.gameObject;
                 cubeInHand.transform.SetParent(pickUpTransform.transform, true);
@@ -59,11 +63,6 @@ public class PickUp : MonoBehaviour
                 rb.angularDrag = 1f;
                 rb.constraints = RigidbodyConstraints.FreezeRotation;
             }
-            //else if (Vector3.Distance(cubeInHand.transform.position, pickUpTransform.position) > 0.2f)      // PROBLÈME À RÉGLER ICI, NE S'INITIALISE PAS (NULL REFERENCE) MAIS PERMET UN DROPPING PLUS PROCHE DU JEU
-            //{
-            //    Vector3 moveDirection = (pickUpTransform.position - cubeInHand.transform.position);
-            //    rb.AddForce(moveDirection * pickUpForce);
-            //}
         }
     }
 
@@ -81,15 +80,20 @@ public class PickUp : MonoBehaviour
         }
     }
 
-    //private void CubeMove()
-    //{
-    //    // Mouvements du cube lorsqu'on l'a dans la main:
-    //    if (Vector3.Distance(cubeInHand.transform.position, pickUpTransform.position) > 0.1f)
-    //    {
-    //        Vector3 moveDirection = (pickUpTransform.position - cubeInHand.transform.position);
-    //        rb.AddForce(moveDirection * pickUpForce);
-    //    }   
-    //}
+    private void OnInteract()
+    {
+        if(Physics.Raycast(
+            playerCameraTransform.position,
+            playerCameraTransform.forward,
+            out hit, pickUpRange,
+            interactLayerMask))
+        {
+            if (playerControls.Player.Interact.triggered)
+            {
+                openIncinerator.DestroyIncineratorDoor();
+            }
+        }
+    }
 
     // Pour éviter les pertes de mémoire:
     private void OnEnable()

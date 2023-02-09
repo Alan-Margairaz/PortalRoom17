@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
         // Récupération des inputs mouvement du joueur en temps réel :
         Vector2 playerMove = playerControls.Player.Move.ReadValue<Vector2>();
 
-        // Appel des fonctions pour éviter de sur peupler la fonction Update, puis permet une meilleure organisation :
+        // Appel des fonctions pour éviter de surpeupler la fonction Update, puis permet une meilleure organisation :
         Gravity();
         OnMove();
         OnJump();
@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
 
         if(isGrounded && playerVelocity.y < 0)
         {
-            playerVelocity.y = -2.0f;       // Permet une fin de saut plus smooth
+            playerVelocity.y = -2.0f;       // Permet une fin de saut plus fluide
         }
 
         // Mise en place de la gravité :
