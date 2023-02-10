@@ -61,4 +61,10 @@ public class MovablePlatforms : MonoBehaviour
         timeToWaypoint = distanceToWaypoint / speed;
 
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+
+        other.transform.SetParent(transform);
+    }
 }
