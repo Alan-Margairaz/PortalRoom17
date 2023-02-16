@@ -9,6 +9,7 @@ TagManager:
   - Pickable
   - Button
   - Destroyable
+  - EnergyPellet
   layers:
   - Default
   - TransparentFX

@@ -368,6 +368,7 @@
 "Assets/Scripts/LevelObjects/OpenIncinerator.cs"
 "Assets/Scripts/LevelObjects/WaypointPath.cs"
 "Assets/Scripts/PelletLaunchers/EnergyPellet.cs"
+"Assets/Scripts/PelletLaunchers/MaterialChange.cs"
 "Assets/Scripts/PelletLaunchers/PelletLaunch.cs"
 "Assets/Scripts/PortalGun/BulletDestroy.cs"
 "Assets/Scripts/UI/MainMenu.cs"

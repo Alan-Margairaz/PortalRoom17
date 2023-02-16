@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnergyPellet : MonoBehaviour
 {
+    // Variables de contrôle de rebonds:
     int reboundCount = 0;
 
     // Grâce au Physics Material, on peut contrôler le nombre de rebonds voulu des boules d'énergie:
@@ -24,7 +25,7 @@ public class EnergyPellet : MonoBehaviour
     {
         if (other.tag == "PelletCatcher")
         {
-            Destroy(gameObject);
+            Destroy(gameObject, 5f);
         }
     }
 }
