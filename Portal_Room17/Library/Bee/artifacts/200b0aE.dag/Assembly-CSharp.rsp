@@ -371,6 +371,10 @@
 "Assets/Scripts/PelletLaunchers/MaterialChange.cs"
 "Assets/Scripts/PelletLaunchers/PelletLaunch.cs"
 "Assets/Scripts/PortalGun/BulletDestroy.cs"
+"Assets/Scripts/PortalGun/CameraUtility.cs"
+"Assets/Scripts/PortalGun/MainCamera.cs"
+"Assets/Scripts/PortalGun/Portal.cs"
+"Assets/Scripts/PortalGun/PortalTraveller.cs"
 "Assets/Scripts/UI/MainMenu.cs"
 "Assets/Scripts/UI/PauseMenu.cs"
 -langversion:9.0
