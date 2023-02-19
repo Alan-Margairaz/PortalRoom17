@@ -13,7 +13,7 @@ public class CubeGiver : MonoBehaviour
 
     private void Start()
     {
-        Instantiate(companionCubePrefab, cubeSpawn.transform.position, Quaternion.identity);
+        Instantiate(companionCubePrefab, cubeSpawn.transform.position, Quaternion.Euler(0,0,0));
     }
 
 
