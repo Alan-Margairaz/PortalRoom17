@@ -10,6 +10,7 @@ TagManager:
   - Button
   - Destroyable
   - EnergyPellet
+  - CompanionCube
   layers:
   - Default
   - TransparentFX

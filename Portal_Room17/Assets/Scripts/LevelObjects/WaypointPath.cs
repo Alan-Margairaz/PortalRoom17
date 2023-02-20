@@ -16,12 +16,6 @@ public class WaypointPath : MonoBehaviour
         // Le prochain waypoint est forcément à l'index n+1, donc on l'initialise:
         int nextWaypointIndex = currentWaypointIndex + 1;
 
-        //// Ensuite on loop
-        //if (nextWaypointIndex == transform.childCount)
-        //{
-        //    nextWaypointIndex = 0;
-        //}
-
         return nextWaypointIndex;
     }
 }

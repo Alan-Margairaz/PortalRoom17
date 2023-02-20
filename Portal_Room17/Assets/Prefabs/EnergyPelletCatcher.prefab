@@ -16546,6 +16546,8 @@ GameObject:
   - component: {fileID: 6158367676416899856}
   - component: {fileID: 6158367676416899871}
   - component: {fileID: 6158367676416899870}
+  - component: {fileID: 5858124611393940224}
+  - component: {fileID: 2301877696887888870}
   m_Layer: 0
   m_Name: Catcher
   m_TagString: PelletCatcher
@@ -16631,3 +16633,29 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5858124611393940224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6158367676416899869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 570408fa837e143c9b38a913c063126a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movablePlatforms: {fileID: 0}
+--- !u!114 &2301877696887888870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6158367676416899869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e880be0714742d6a4f7484150469b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialChange: {fileID: 6158367676416899871}

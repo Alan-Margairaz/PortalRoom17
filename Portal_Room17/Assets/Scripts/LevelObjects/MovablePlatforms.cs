@@ -35,12 +35,6 @@ public class MovablePlatforms : MonoBehaviour
 
         // On lerp pour pouvoir avoir un mouvement fluide entre les deux points grâce au temps que mets la plateforme entre les 2 waypoints:
         transform.position = Vector3.Lerp(previousWaypoint.position, targetWaypoint.position, elapsedPercentage);
-
-        // Mouvement jusqu'au waypoint suivant:
-        if(elapsedPercentage >= 1)
-        {
-            TargetNextWaypoint();
-        }
     }
 
     private void TargetNextWaypoint()
@@ -56,15 +50,17 @@ public class MovablePlatforms : MonoBehaviour
 
         elapsedTime = 0;
 
-        //Produit en croix pour calculer le temps, car on a la vitesse et la distance entre les deux points:
+        // Calcul de la distance entre les 2 points pour calculer le temps pris par le Lerp pour arriver du point A à B:
         float distanceToWaypoint = Vector3.Distance(previousWaypoint.position, targetWaypoint.position);
-        timeToWaypoint = distanceToWaypoint / speed;
 
+        //Produit en croix pour calculer le temps, car on a la vitesse et la distance entre les deux points:
+        timeToWaypoint = distanceToWaypoint / speed;
     }
 
+
+    // Rajout de cette fonction pour l'ascenceur de fin, que le joueur ne glitch pas à travers le sol qui bouge:
     private void OnTriggerEnter(Collider other)
     {
-
         other.transform.SetParent(transform);
     }
 }

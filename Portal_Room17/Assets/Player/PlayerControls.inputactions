@@ -140,6 +140,17 @@
                 },
                 {
                     "name": "",
+                    "id": "8e826b5d-b9f2-49a9-8633-148bec56a639",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "5d4f1bbc-7b20-4aad-ab2e-8ea5ecf870e6",
                     "path": "<Keyboard>/e",
                     "interactions": "",
