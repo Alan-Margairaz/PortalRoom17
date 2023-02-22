@@ -22,11 +22,6 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundMask;
     private bool isGrounded;
 
-    // Variables de tir :
-    [SerializeField][Range(1, 15)] private float bulletSpeed = 10.0f;
-    public Transform bulletSpawnPoint;
-    public GameObject bulletPrefab;
-
 
     private void Awake()
     {
@@ -43,7 +38,6 @@ public class PlayerController : MonoBehaviour
         Gravity();
         OnMove();
         OnJump();
-        OnFire();
     }
 
     private void OnMove()
@@ -72,23 +66,12 @@ public class PlayerController : MonoBehaviour
 
         if(isGrounded && playerVelocity.y < 0)
         {
-            playerVelocity.y = -2.0f;       // Permet une fin de saut plus fluide
+            playerVelocity.y = -2.0f;       // Permet un saut plus fluide
         }
 
         // Mise en place de la gravité :
         playerVelocity.y += gravity * Time.deltaTime;
         characterController.Move(playerVelocity * Time.deltaTime);
-    }
-
-    private void OnFire()
-    {
-        if (playerControls.Player.Fire.triggered)
-        {
-            // Instantiation de la balle avec la bonne position & la bonne rotation en utilisant un préfab :
-            var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);   
-            // Mise en place de la vélocité de la balle :
-            bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * bulletSpeed;             
-        }
     }
 
     // Pour éviter les pertes de mémoires il faut activer et désactiver l'écoute des inputs que lorsqu'on en a besoin : 

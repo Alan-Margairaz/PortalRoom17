@@ -11,13 +11,13 @@ public class PelletLaunch : MonoBehaviour
 
     // Variables de délai de spawn des EnergyPellet:
     int maxPelletNumber = 10;
-    [SerializeField] private float instantiationDelay = 7.0f;
+    [SerializeField] private float instantiationDelay = 100.0f;
 
 
     // Fonction pour que le launcher fonctionne seulement aux endroits d'intérêt:
     private void OnTriggerEnter(Collider collider)
     {
-        if (collider.tag == "Player")
+        if (collider.CompareTag("Player"))
         {
             // Démarrage de la co-routine seulement après détection du joueur:
             StartCoroutine(InstantiatePellets());

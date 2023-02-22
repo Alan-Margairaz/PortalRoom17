@@ -25,7 +25,7 @@ public class EnergyPellet : MonoBehaviour
     {
         if (other.tag == "PelletCatcher")
         {
-            Destroy(gameObject, 5f);
+            Destroy(gameObject);
         }
     }
 }

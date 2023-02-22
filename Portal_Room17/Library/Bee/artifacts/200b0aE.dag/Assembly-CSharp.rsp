@@ -364,7 +364,9 @@
 "Assets/Scripts/CompanionCube/PickUp.cs"
 "Assets/Scripts/Controllers/CameraController.cs"
 "Assets/Scripts/Controllers/PlayerController.cs"
+"Assets/Scripts/Controllers/PortalLaunch.cs"
 "Assets/Scripts/LevelObjects/ActivateButtons.cs"
+"Assets/Scripts/LevelObjects/DestroyableCameras.cs"
 "Assets/Scripts/LevelObjects/MovablePlatforms.cs"
 "Assets/Scripts/LevelObjects/OpenIncinerator.cs"
 "Assets/Scripts/LevelObjects/WaypointPath.cs"
@@ -372,7 +374,7 @@
 "Assets/Scripts/PelletLaunchers/FirstPlatformActivation.cs"
 "Assets/Scripts/PelletLaunchers/MaterialChange.cs"
 "Assets/Scripts/PelletLaunchers/PelletLaunch.cs"
-"Assets/Scripts/PortalGun/BulletDestroy.cs"
+"Assets/Scripts/PortalGun/PortalSpawn.cs"
 "Assets/Scripts/UI/MainMenu.cs"
 "Assets/Scripts/UI/PauseMenu.cs"
 -langversion:9.0

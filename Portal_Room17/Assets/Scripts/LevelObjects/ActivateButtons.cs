@@ -6,8 +6,8 @@ public class ActivateButtons : MonoBehaviour
 {
     // Références de l'animator pour les animations du gros bouton et des portes :
     [SerializeField] private Animator buttonPressedAnimator;
-    [SerializeField] private Animator roomDoor1Animator;
-    [SerializeField] private Animator roomDoor2Animator;
+    [SerializeField] private Animator roomDoorOneAnimator;
+    [SerializeField] private Animator roomDoorTwoAnimator;
 
 
     private void OnTriggerStay(Collider other)
@@ -16,8 +16,12 @@ public class ActivateButtons : MonoBehaviour
         if(other.CompareTag("CompanionCube"))
         {
             buttonPressedAnimator.SetBool("isCubePlaced", true);
-            roomDoor1Animator.SetBool("isCubePlaced", true);
-            roomDoor2Animator.SetBool("isCubePlaced", true);
+            roomDoorOneAnimator.SetBool("isButtonPressed", true);
+            roomDoorTwoAnimator.SetBool("isButtonPressed", true);
+        } else if (other.tag != "CompanionCube")
+        {
+            roomDoorOneAnimator.SetBool("isButtonPressed", false);
+            roomDoorTwoAnimator.SetBool("isButtonPressed", false);
         }
     }
 }

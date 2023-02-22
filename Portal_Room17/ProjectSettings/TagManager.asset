@@ -4,13 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Activation1
   - PelletCatcher
   - Pickable
   - Button
   - Destroyable
   - EnergyPellet
   - CompanionCube
+  - Bullet
+  - Spawnable
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - UI
   - Pickable
   - Interactable
-  - 
+  - Spawnable
   - 
   - 
   - 
