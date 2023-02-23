@@ -11054,7 +11054,7 @@ GameObject:
   - component: {fileID: 529187965}
   - component: {fileID: 529187964}
   - component: {fileID: 529187963}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: WhiteWall (9)
   m_TagString: Spawnable
   m_Icon: {fileID: 0}
@@ -27386,7 +27386,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9031270840517231330, guid: 317b180e7126e4ca59c6e8ddcc774107, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 46.49
+      value: 23.25
       objectReference: {fileID: 0}
     - target: {fileID: 9031270840517231330, guid: 317b180e7126e4ca59c6e8ddcc774107, type: 3}
       propertyPath: m_LocalPosition.y
@@ -27394,7 +27394,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9031270840517231330, guid: 317b180e7126e4ca59c6e8ddcc774107, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 33.98
+      value: 35.12
       objectReference: {fileID: 0}
     - target: {fileID: 9031270840517231330, guid: 317b180e7126e4ca59c6e8ddcc774107, type: 3}
       propertyPath: m_LocalRotation.w
@@ -32420,9 +32420,9 @@ GameObject:
   - component: {fileID: 1148104538}
   - component: {fileID: 1148104537}
   - component: {fileID: 1148104536}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WhiteWall (8)
-  m_TagString: Untagged
+  m_TagString: Spawnable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32970,9 +32970,9 @@ GameObject:
   - component: {fileID: 1203536493}
   - component: {fileID: 1203536492}
   - component: {fileID: 1203536491}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WhiteWall (7)
-  m_TagString: Untagged
+  m_TagString: Spawnable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38543,7 +38543,7 @@ GameObject:
   - component: {fileID: 1344232488}
   m_Layer: 3
   m_Name: Terrain
-  m_TagString: Untagged
+  m_TagString: Spawnable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647

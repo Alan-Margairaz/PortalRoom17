@@ -12,6 +12,8 @@ TagManager:
   - CompanionCube
   - Bullet
   - Spawnable
+  - OrangePortal
+  - BluePortal
   layers:
   - Default
   - TransparentFX
