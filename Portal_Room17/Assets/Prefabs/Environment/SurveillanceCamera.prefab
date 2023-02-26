@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1959424876383855677}
   - component: {fileID: 1959424876383855676}
   - component: {fileID: 1959424876383855679}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2301,7 +2301,7 @@ GameObject:
   - component: {fileID: 1959424876709134853}
   - component: {fileID: 1959424876709134852}
   - component: {fileID: 1959424876709134855}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2996,7 +2996,7 @@ GameObject:
   - component: {fileID: 1959424876818472296}
   - component: {fileID: 1959424876818472299}
   - component: {fileID: 1959424876818472297}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SurveillanceCamera
   m_TagString: Destroyable
   m_Icon: {fileID: 0}
@@ -3075,7 +3075,7 @@ GameObject:
   - component: {fileID: 1959424877424541739}
   - component: {fileID: 1959424877424541738}
   - component: {fileID: 1959424877424541733}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}

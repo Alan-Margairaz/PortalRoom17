@@ -20,7 +20,9 @@ public class PlayerController : MonoBehaviour
     public float distanceToGround = 0.4f;
     public Transform groundCheck;
     public LayerMask groundMask;
+    public LayerMask pickableMask;
     private bool isGrounded;
+    private bool isOnCube;
 
 
     private void Awake()
@@ -53,7 +55,7 @@ public class PlayerController : MonoBehaviour
     private void OnJump()
     {
         // Check de si le joueur appuie sur espace ET de s'il touche le sol :
-        if (playerControls.Player.Jump.triggered && isGrounded)
+        if ( (playerControls.Player.Jump.triggered && isGrounded) || (playerControls.Player.Jump.triggered && isOnCube) )
         {
             playerVelocity.y = Mathf.Sqrt(jumpHeight * -0.75f * gravity);      // Saut
         }
@@ -64,7 +66,10 @@ public class PlayerController : MonoBehaviour
         // On check si le joueur touche le sol ou non en créeant une sphère sous les pieds du joueur, si la sphère touche le sol le joueur touche le sol :
         isGrounded = Physics.CheckSphere(groundCheck.position, distanceToGround, groundMask);
 
-        if(isGrounded && playerVelocity.y < 0)
+        // Cas de si le joueur est sur le cube:
+        isOnCube = Physics.CheckSphere(groundCheck.position, distanceToGround, pickableMask);
+
+        if( (isGrounded && playerVelocity.y < 0) || (isOnCube && playerVelocity.y < 0) )
         {
             playerVelocity.y = -2.0f;       // Permet un saut plus fluide
         }

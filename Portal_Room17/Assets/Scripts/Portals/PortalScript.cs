@@ -20,7 +20,6 @@ public class PortalScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("triggered TP");
         // Check des objets qui peuvent passer le portail (le joueur, le cube ou les boules d'énergie):
         if(other.CompareTag("Player") || other.CompareTag("CompanionCube") || other.CompareTag("EnergyPellet"))
         {
