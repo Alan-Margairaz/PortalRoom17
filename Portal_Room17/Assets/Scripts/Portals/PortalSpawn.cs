@@ -30,7 +30,7 @@ public class PortalSpawn : MonoBehaviour
 
     private void Update()
     {
-        //PortalCount();
+
     }
 
     // Apparition du portail lorsque la balle collide avec une surface permettant le spawn d'un portail:
@@ -53,6 +53,7 @@ public class PortalSpawn : MonoBehaviour
             // Test de si le mur permet l'apparition d'un portail ou non ainsi que du type de balle tiré:
             if (collider.collider.CompareTag("Spawnable") && gameObject.Equals(blueBullet))
             {
+                // Conditions pour s'il y a un autre portail déjà dans le jeu, on le détruit et en instantie un nouveau:
                 if (GameObject.FindGameObjectWithTag("BluePortal") == null)
                 {
                     // Instantiation du portail bleu au point ou la balle touche et avec la rotation de la surface touchée:
@@ -60,6 +61,7 @@ public class PortalSpawn : MonoBehaviour
                 }
                 else
                 {
+                    // Phase de remplacement du portail existant en un nouveau portail:
                     Destroy(GameObject.FindGameObjectWithTag("BluePortal"));
                     Instantiate(bluePortalPrefab, hit.point + new Vector3(0.1f, 0, 0), hitObjectRotation);
                 }
@@ -88,30 +90,4 @@ public class PortalSpawn : MonoBehaviour
             }
         }
     }
-
-    //private void PortalCount()
-    //{
-    //    GameObject orangePortalToDestroy = null;
-    //    GameObject bluePortalToDestroy = null;
-
-    //    for (int i = 0; i <= orangePortalsList.Count; i++)
-    //    {
-    //        Debug.Log("In the orange for loop");
-    //        if (i == 2)
-    //        {
-    //            orangePortalToDestroy = orangePortalsList[1];
-    //            Destroy(orangePortalToDestroy.gameObject);
-    //        }
-    //    }
-
-    //    for (int i = 0; i <= bluePortalsList.Count; i++)
-    //    {
-    //        Debug.Log("In the blue for loop");
-    //        if (i == 2)
-    //        {
-    //            bluePortalToDestroy = orangePortalsList[1];
-    //            Destroy(bluePortalToDestroy.gameObject);
-    //        }
-    //    }
-    //}
 }

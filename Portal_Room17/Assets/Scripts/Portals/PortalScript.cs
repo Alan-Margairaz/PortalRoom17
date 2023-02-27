@@ -27,9 +27,12 @@ public class PortalScript : MonoBehaviour
             characterController.enabled = false;
             if (hasPassedPortal == false)
             {
+                hasPassedPortal = true;
+                //Debug.Log("Triggered and not yet passed");
                 // Cas de si le joueur entre en trigger avec un portail bleu:
                 if (gameObject.Equals(bluePortal))
                 {
+                    //Debug.Log("Triggered dans blue portal detected");
                     // Destination du joueur à travers le portail bleu:
                     Vector3 blueDestinationPos = GameObject.FindGameObjectWithTag("OrangePortal").transform.position + (2 * GameObject.FindGameObjectWithTag("OrangePortal").transform.forward);
 

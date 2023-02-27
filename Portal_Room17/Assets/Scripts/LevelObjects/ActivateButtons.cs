@@ -10,18 +10,23 @@ public class ActivateButtons : MonoBehaviour
     [SerializeField] private Animator roomDoorTwoAnimator;
 
 
-    private void OnTriggerStay(Collider other)
-    { 
-        // Activation de l'animation du bouton :
+    private void OnTriggerEnter(Collider other)
+    {
+        // Activation de l'animation du bouton et des portes si le Companion Cube est posé sur le bouton:
         if(other.CompareTag("CompanionCube"))
         {
             buttonPressedAnimator.SetBool("isCubePlaced", true);
-            roomDoorOneAnimator.SetBool("isButtonPressed", true);
-            roomDoorTwoAnimator.SetBool("isButtonPressed", true);
+            buttonPressedAnimator.SetBool("open", true);           
         } else if (other.tag != "CompanionCube")
         {
-            roomDoorOneAnimator.SetBool("isButtonPressed", false);
-            roomDoorTwoAnimator.SetBool("isButtonPressed", false);
+            // Désactivation des animations des portes si il y a autre chose que le Companion Cube sur le bouton:
+            buttonPressedAnimator.SetBool("close", true);
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        // Désactivation de l'animation du bouton si rien n'est placé dessus:
+        buttonPressedAnimator.SetBool("isCubePlaced", false);
     }
 }

@@ -376,6 +376,7 @@
 "Assets/Scripts/Portals/PortalLaunch.cs"
 "Assets/Scripts/Portals/PortalScript.cs"
 "Assets/Scripts/Portals/PortalSpawn.cs"
+"Assets/Scripts/Portals/Rotators.cs"
 "Assets/Scripts/UI/MainMenu.cs"
 "Assets/Scripts/UI/PauseMenu.cs"
 -langversion:9.0
