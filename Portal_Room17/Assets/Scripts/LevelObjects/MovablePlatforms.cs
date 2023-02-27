@@ -37,7 +37,7 @@ public class MovablePlatforms : MonoBehaviour
         transform.position = Vector3.Lerp(previousWaypoint.position, targetWaypoint.position, elapsedPercentage);
     }
 
-    private void TargetNextWaypoint()
+    public void TargetNextWaypoint()
     {
         // Initialisation de la 'cible' que la plateforme doit avoir en fonction de l'index:
         previousWaypoint = waypointPath.GetWaypoint(targetWaypointIndex);
@@ -62,5 +62,6 @@ public class MovablePlatforms : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         other.transform.SetParent(transform);
+        TargetNextWaypoint();
     }
 }

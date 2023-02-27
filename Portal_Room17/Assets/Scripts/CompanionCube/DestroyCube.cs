@@ -7,9 +7,8 @@ public class DestroyCube : MonoBehaviour
     // Variable d'ouverture de la porte de l'ascenceur de fin par référencement de l'animator:
     [SerializeField] private Animator doorOneAnimator;
     [SerializeField] private Animator doorTwoAnimator;
+    [SerializeField] private GameObject endElevator;
 
-    // Référence du cube à détruire:
-    public GameObject companionCube;
 
     // J'ai choisi OnTriggerStay pour que si jamais le cube glitch ou que la collision est mal faite le cube ne se détruise pas par erreur:
     private void OnTriggerStay(Collider other)
@@ -17,11 +16,14 @@ public class DestroyCube : MonoBehaviour
         if (other.CompareTag("CompanionCube"))
         {
             // Destruction du Companion Cube:
-            Destroy(companionCube, 2f);
+            Destroy(other.gameObject, 1f);
 
             // Setter du booléen appliqué dans l'animator pour activer les animations seulement si le cube est détruit:
             doorOneAnimator.SetBool("isCubeDestroyed", true);
             doorTwoAnimator.SetBool("isCubeDestroyed", true);
+
+            // Activation de la montée de l'ascenceur:
+            endElevator.SetActive(true);
         }
     }
 }
